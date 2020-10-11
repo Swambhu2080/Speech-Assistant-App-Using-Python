@@ -78,6 +78,13 @@ def Instructions():
         elif 'open code' in query:
             codePath = "D:Microsoft VS Code\\Code.exe"
             os.startfile(codePath)
+            
+        elif 'search' in query:
+            speak("What do you want to search?")
+            find = Listen().lower()
+            url = 'https://google.com/search?q='+find
+            webbrowser.get().open(url)
+            speak('Here is what i found!!')
 
         elif 'exit' in query:
             speak("Thank you!")
